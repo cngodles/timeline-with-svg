@@ -5,7 +5,22 @@ $(document)
 .ready(function(){
 	responder.setFrameWidths();
 	setTimeout(function(){ responder.setFrameWidths(); }, 1000);
-	runit(3, 120, 1896);
+	svgtime.run(1, 120, 1900);
+
+	svgtime.setPoint(8, 1942, 'Ron');
+	svgtime.setPoint(6, 1945, 'Judy');
+	svgtime.setPoint(9, 1954, 'Clint');
+	svgtime.setPoint(9, 1957, 'Cindy');
+	svgtime.setPoint(5, 1962, 'Bill');
+	svgtime.setPoint(12, 1963, 'Roni Sue');
+	svgtime.setPoint(5, 1983, 'Clint');
+	svgtime.setPoint(11, 1983, 'Rachel');
+	svgtime.setPoint(8, 1988, 'Kristin');
+	svgtime.setPoint(12, 1991, 'Jenn');
+	svgtime.setPoint(5, 1998, 'Connor');
+	svgtime.setPoint(10, 2005, 'Declan');
+	svgtime.setPoint(6, 2010, 'Ralena');
+	svgtime.showBoundryLine(4, 2016);
 })
 .on("click", "#nav-toggle", function(){
 	//Toggle Mobile Slide Menu
