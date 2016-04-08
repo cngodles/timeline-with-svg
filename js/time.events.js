@@ -5,8 +5,8 @@ $(document)
 .ready(function(){
 	responder.setFrameWidths();
 	setTimeout(function(){ responder.setFrameWidths(); }, 1000);
-	svgtime.run(1, 120, 1900);
-
+	svgtime.run(2, 120, 1900, 10);
+	
 	svgtime.setPoint(8, 1942, 'Ron');
 	svgtime.setPoint(6, 1945, 'Judy');
 	svgtime.setPoint(9, 1954, 'Clint');
@@ -102,4 +102,4 @@ var responder = {
 			this.closeDeviceMenu();
 		}
 	}
-}
+};
