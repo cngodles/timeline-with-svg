@@ -16,7 +16,14 @@ var svgtime = {
       name:{top:this.baseline, bottom:this.baseline + 100},
       text:this.baseline + 110
     }
-    this.paper.circle(leftpoint, this.baseline, 7).attr("fill", "#f00").attr("stroke-width", "0");
+    this.paper.circle(leftpoint, this.baseline, 7).attr("fill", "#f00").attr("stroke-width", "0")
+      .hover(function(){
+        this.animate({"r": 12}, 200);
+      }, function(){
+        this.animate({"r": 7}, 200);
+      })
+      .click(function(){ alert("clicked.")})
+      ;
     this.paper.path("M"+leftpoint+" "+ticklimits.name.top+"L"+leftpoint+" "+ticklimits.name.bottom).attr("stroke", "red");
     this.paper.text(leftpoint, ticklimits.text, name);
   },
@@ -27,7 +34,6 @@ var svgtime = {
     var ticklimits = {
       name:{top:0, bottom:600}
     }
-    this.paper.path("M"+leftpoint+" "+ticklimits.name.top+"L"+leftpoint+" "+ticklimits.name.bottom).attr("stroke-width", "3").attr("stroke", "blue");
   },
   run:function(permonth, years, startyear){
     this.permonth = permonth;
