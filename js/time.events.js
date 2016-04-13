@@ -1,12 +1,34 @@
 $(window).resize(function(){ responder.resized(); });
 window.onorientationchange = function (event){ responder.resized(); }
 
+var allpoints = [
+    {'name':'Ron', 'date':'1942-08'},
+    {'name':'Judy', 'date':'1945-06'},
+    {'name':'Clint', 'date':'1954-09'},
+    {'name':'Cindy', 'date':'1957-09'},
+    {'name':'Bill', 'date':'1962-05'},
+    {'name':'Roni Sue', 'date':'1963-12'},
+    {'name':'Clint', 'date':'1983-05'},
+    {'name':'Rachel', 'date':'1983-11'},
+    {'name':'Kristin', 'date':'1988-08'},
+    {'name':'Jenn', 'date':'1991-12'},
+    {'name':'Connor', 'date':'1998-05'},
+    {'name':'Declan', 'date':'2005-10'},
+    {'name':'Ralena', 'date':'2010-06'}
+];
+
 $(document)
 .ready(function(){
 	responder.setFrameWidths();
 	setTimeout(function(){ responder.setFrameWidths(); }, 1000);
-	svgtime.run(2, 120, 1900, 10);
+	svgtime.run(1.5, 80, 1940, 10);
 	
+    svgtime.showBoundryLine(4, 2016);
+    
+    for(var i=0; i < allpoints.length; i++){
+        svgtime.setPoint(allpoints[i]['date'], allpoints[i]['name']);
+    }
+    /*
 	svgtime.setPoint(8, 1942, 'Ron');
 	svgtime.setPoint(6, 1945, 'Judy');
 	svgtime.setPoint(9, 1954, 'Clint');
@@ -20,7 +42,8 @@ $(document)
 	svgtime.setPoint(5, 1998, 'Connor');
 	svgtime.setPoint(10, 2005, 'Declan');
 	svgtime.setPoint(6, 2010, 'Ralena');
-	svgtime.showBoundryLine(4, 2016);
+    */
+    
 })
 .on("click", "#nav-toggle", function(){
 	//Toggle Mobile Slide Menu

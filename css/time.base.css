@@ -1,44 +1,44 @@
-body 			    { background-color: #fff; color: #5d5d5d; font-family:Arial, Helvetica, sans-serif; letter-spacing: normal; margin: 0; overflow-y: scroll; z-index: 1; }
-a 				    { border: 0 none; }
-input         { border-radius: 0; }
-#siteframe 		{ background-color: #25282a; overflow: hidden; position: relative; width: 100%; z-index: 1; min-width:320px; }
-#wrapper      { background-color: #ccc; width:100%; min-height: 400px; min-width: 1280px; z-index: 1; overflow:hidden; position:relative; }
-.inner        { margin: 0 auto; width: 100%; z-index: 1; background-color:#CCC; }
+body 			{ background-color: #fff; color: #5d5d5d; font-family:Arial, Helvetica, sans-serif; letter-spacing: normal; margin: 0; overflow-y: scroll; z-index: 1; }
+a 				{ border: 0 none; }
+input           { border-radius: 0; }
+#siteframe      { background-color: #25282a; overflow: hidden; position: relative; width: 100%; z-index: 1; min-width:320px; }
+#wrapper        { background-color: #ccc; width:100%; min-height: 400px; min-width: 1280px; z-index: 1; overflow:hidden; position:relative; }
+.inner          { margin: 0 auto; width: 100%; z-index: 1; background-color:#CCC; }
 
 header			{ min-height:50px; font-size:24px; }
 header a		{ font-size:14px; }
-header .inner	{ min-height:50px; background-color:#999; }
+header .inner	{ min-height:50px; }
 
-#timeline { display:block; width:100%; height:620px; border:1px solid #000; overflow-y: auto; }
-
-
+#timeline       { display:block; width:100%; height:720px; border:1px solid #000; overflow-y: auto; }
 
 
 
-.clear0 	{ font-size:0px; line-height:0px; width:0px; height:0px; clear:both; display:block; }
+
+
+.clear0         { font-size:0px; line-height:0px; width:0px; height:0px; clear:both; display:block; }
 
 #mobile_menu 	{ display:block; position:absolute; top:0; right:0; }
 #responder 		{ left: -5000px; position: absolute; z-index: 1; }
 
 @media only screen and (max-width: 767px) {
 
-	#wrapper { width:100%; min-height: 400px; min-width: 320px; z-index: 1; margin: 0px auto; -webkit-box-shadow:  0px 0px 10px 0px #000000; box-shadow:  0px 0px 10px 0px #000000; position:relative; top:0; }
-  .inner { width: 90%; margin: 0px auto;  }
+    #wrapper { width:100%; min-height: 400px; min-width: 320px; z-index: 1; margin: 0px auto; -webkit-box-shadow:  0px 0px 10px 0px #000000; box-shadow:  0px 0px 10px 0px #000000; position:relative; top:0; }
+    .inner { width: 90%; margin: 0px auto;  }
 
-  #mobile_menu { width: 68%; background: #e6e2e7; padding: 0px; font-size:10px; color: #949494; text-align: center; display:block; }
+    #mobile_menu { width: 68%; background: #e6e2e7; padding: 0px; font-size:10px; color: #949494; text-align: center; display:block; }
 
-  header .hamburger { display:block; float: right; height: 50px; width: 35px; padding: 30px 0px 0px 0px; }
-  #nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; position:absolute; }
-  #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after { cursor: pointer; border-radius: 1px; height: 5px; width: 35px; background: #fff; position: absolute; display: block; content: ''; }
-  #nav-toggle span:before { top: -10px; }
-  #nav-toggle span:after { bottom: -10px; }
-  #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after { transition: all 500ms ease-in-out; }
-  #nav-toggle.active span { background-color: transparent; }
-  #nav-toggle.active span:before, #nav-toggle.active span:after { top: 0; }
-  #nav-toggle.active span:before { transform: rotate(45deg); }
-  #nav-toggle.active span:after { transform: rotate(-45deg); }
+    header .hamburger { display:block; float: right; height: 50px; width: 35px; padding: 30px 0px 0px 0px; }
+    #nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; position:absolute; }
+    #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after { cursor: pointer; border-radius: 1px; height: 5px; width: 35px; background: #fff; position: absolute; display: block; content: ''; }
+    #nav-toggle span:before { top: -10px; }
+    #nav-toggle span:after { bottom: -10px; }
+    #nav-toggle span, #nav-toggle span:before, #nav-toggle span:after { transition: all 500ms ease-in-out; }
+    #nav-toggle.active span { background-color: transparent; }
+    #nav-toggle.active span:before, #nav-toggle.active span:after { top: 0; }
+    #nav-toggle.active span:before { transform: rotate(45deg); }
+    #nav-toggle.active span:after { transform: rotate(-45deg); }
 
-  #responder { z-index: 10; }
+    #responder { z-index: 10; }
 }
 /* tablet vertical */
 @media only screen and (min-width: 768px) and (max-width: 989px) {

@@ -1,14 +1,21 @@
 var svgtime = {
 	loaded:false,
-	baseline:400,
-	permonth:4,
-	years:120,
-	startyear:1896,
+	baseline:500,
+	permonth:2,
+	years:80,
+	startyear:1940,
 	darkmarks:10,
-	paper:'',
-  	setPoint:function(month, year, name){
-		var yeardiff = (year - this.startyear) * (this.permonth * 12);
-		var monthdiff = ((month - 1) *  this.permonth) + (this.permonth/2);
+    lines:{
+        per:25,
+        last:25
+    },
+    boundrypoint:0,
+    paper:'',
+  	setPoint:function(datein, name){
+		var datein = datein.split('-');
+        
+        var yeardiff = (datein[0] - this.startyear) * (this.permonth * 12);
+		var monthdiff = ((datein[1] - 1) *  this.permonth) + (this.permonth/2);
 		var leftpoint = yeardiff + monthdiff + 20;
 		console.log(leftpoint);
 	
@@ -26,6 +33,12 @@ var svgtime = {
 			;
 		this.paper.path("M"+leftpoint+" "+ticklimits.name.top+"L"+leftpoint+" "+ticklimits.name.bottom).attr("stroke", "red");
 		this.paper.text(leftpoint, ticklimits.text, name);
+        
+        
+        this.paper.circle(leftpoint, this.lines.last, 7).attr("fill", "#f00").attr("stroke-width", "0")
+        this.paper.path("M"+leftpoint+" "+this.lines.last+"L"+this.boundrypoint+" "+this.lines.last).attr("stroke", "red").attr("stroke-width", "2");
+        this.paper.text(leftpoint+10, this.lines.last-5, name).attr('text-anchor', 'start');
+        this.lines.last += this.lines.per;
   	},
   	showBoundryLine:function(month, year){
 		var yeardiff = (year - this.startyear) * (this.permonth * 12);
@@ -34,6 +47,7 @@ var svgtime = {
 		var ticklimits = {
 		  boundry:{top:0, bottom:600}
 		};
+        this.boundrypoint = leftpoint;
 		this.paper.path("M"+leftpoint+" "+ticklimits.boundry.top+"L"+leftpoint+" "+ticklimits.boundry.bottom).attr("stroke-width", "3").attr("stroke", "blue");
   	},
 	clear:function(){
@@ -47,7 +61,7 @@ var svgtime = {
 	
 		var totalmonths = 12 * this.years;
 		var canvaswidth = (this.permonth * totalmonths) + 40;
-		this.paper = Raphael('timeline', canvaswidth, 600);
+		this.paper = Raphael('timeline', canvaswidth, 700);
 	
 		var timelinelength = canvaswidth - 20;
 		
